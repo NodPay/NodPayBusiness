@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* NodPayMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NodPayMobileTests.m */; };
+		00E356F31AD99517003FC87E /* NodPayBusinessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NodPayBusinessTests.m */; };
 		08B414DF028B4FB1BA64271A /* SofiaPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF95969680894C59A2574131 /* SofiaPro-Regular.otf */; };
 		09021902A78240679A8E78BE /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A5950274E9C4801A3BD4356 /* NotoSans-Italic.ttf */; };
 		0C204A08F53B4B0FA96B5DC3 /* SofiaPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9580932D0BAB40DC88A50022 /* SofiaPro-Bold.otf */; };
@@ -15,8 +15,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		36F5B3213147439FABEF638C /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52D8FFCBB765455580F21003 /* NotoSans-Regular.ttf */; };
-		5AE35CC9BF83167DD3581686 /* libPods-NodPayMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1438E471B41626A3DA2E0E3B /* libPods-NodPayMobile.a */; };
-		688D47F65AF763ACC462F406 /* libPods-NodPayMobile-NodPayMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E01D341C933855DFF0B291 /* libPods-NodPayMobile-NodPayMobileTests.a */; };
+		5AE35CC9BF83167DD3581686 /* libPods-NodPayBusiness.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1438E471B41626A3DA2E0E3B /* libPods-NodPayBusiness.a */; };
+		688D47F65AF763ACC462F406 /* libPods-NodPayBusiness-NodPayBusinessTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E01D341C933855DFF0B291 /* libPods-NodPayBusiness-NodPayBusinessTests.a */; };
 		6E8759C36B994FCF8C71380D /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62FFC4BB96214B11AC971074 /* NotoSans-Bold.ttf */; };
 		7C7BE9F86ABE49399DB2139B /* SofiaPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F9A9DDA46E64FB28BA3FACB /* SofiaPro-Medium.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -32,39 +32,39 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = NodPayMobile;
+			remoteInfo = NodPayBusiness;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* NodPayMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NodPayMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* NodPayBusinessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NodPayBusinessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* NodPayMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodPayMobileTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* NodPayBusinessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodPayBusinessTests.m; sourceTree = "<group>"; };
 		0A5950274E9C4801A3BD4356 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSans-Italic.ttf"; path = "../src/assets/fonts/NotoSans-Italic.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* NodPayMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodPayMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NodPayMobile/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NodPayMobile/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NodPayMobile/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NodPayMobile/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NodPayMobile/main.m; sourceTree = "<group>"; };
-		1438E471B41626A3DA2E0E3B /* libPods-NodPayMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NodPayMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* NodPayBusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NodPayBusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NodPayBusiness/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NodPayBusiness/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NodPayBusiness/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NodPayBusiness/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NodPayBusiness/main.m; sourceTree = "<group>"; };
+		1438E471B41626A3DA2E0E3B /* libPods-NodPayBusiness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NodPayBusiness.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9A9DDA46E64FB28BA3FACB /* SofiaPro-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SofiaPro-Medium.otf"; path = "../src/assets/fonts/SofiaPro-Medium.otf"; sourceTree = "<group>"; };
-		41E01D341C933855DFF0B291 /* libPods-NodPayMobile-NodPayMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NodPayMobile-NodPayMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		47100D22B798BB87255A8A6B /* Pods-NodPayMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodPayMobile.debug.xcconfig"; path = "Target Support Files/Pods-NodPayMobile/Pods-NodPayMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		41E01D341C933855DFF0B291 /* libPods-NodPayBusiness-NodPayBusinessTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NodPayBusiness-NodPayBusinessTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47100D22B798BB87255A8A6B /* Pods-NodPayBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodPayBusiness.debug.xcconfig"; path = "Target Support Files/Pods-NodPayBusiness/Pods-NodPayBusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		52D8FFCBB765455580F21003 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSans-Regular.ttf"; path = "../src/assets/fonts/NotoSans-Regular.ttf"; sourceTree = "<group>"; };
-		5D7407D8ACA19B9AE297FF5C /* Pods-NodPayMobile-NodPayMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodPayMobile-NodPayMobileTests.release.xcconfig"; path = "Target Support Files/Pods-NodPayMobile-NodPayMobileTests/Pods-NodPayMobile-NodPayMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		5D7407D8ACA19B9AE297FF5C /* Pods-NodPayBusiness-NodPayBusinessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodPayBusiness-NodPayBusinessTests.release.xcconfig"; path = "Target Support Files/Pods-NodPayBusiness-NodPayBusinessTests/Pods-NodPayBusiness-NodPayBusinessTests.release.xcconfig"; sourceTree = "<group>"; };
 		62FFC4BB96214B11AC971074 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSans-Bold.ttf"; path = "../src/assets/fonts/NotoSans-Bold.ttf"; sourceTree = "<group>"; };
-		6B727F9E9316E603BFCD4A70 /* Pods-NodPayMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodPayMobile.release.xcconfig"; path = "Target Support Files/Pods-NodPayMobile/Pods-NodPayMobile.release.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NodPayMobile/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6B727F9E9316E603BFCD4A70 /* Pods-NodPayBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodPayBusiness.release.xcconfig"; path = "Target Support Files/Pods-NodPayBusiness/Pods-NodPayBusiness.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NodPayBusiness/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9580932D0BAB40DC88A50022 /* SofiaPro-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SofiaPro-Bold.otf"; path = "../src/assets/fonts/SofiaPro-Bold.otf"; sourceTree = "<group>"; };
 		9AF009FC904C48CEA03D98F0 /* SofiaPro-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SofiaPro-Italic.otf"; path = "../src/assets/fonts/SofiaPro-Italic.otf"; sourceTree = "<group>"; };
 		D9B9C88CDE80464587B30BE1 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NotoSans-BoldItalic.ttf"; path = "../src/assets/fonts/NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		DF95969680894C59A2574131 /* SofiaPro-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SofiaPro-Regular.otf"; path = "../src/assets/fonts/SofiaPro-Regular.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FDF78746A31B735F913D01E5 /* Pods-NodPayMobile-NodPayMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodPayMobile-NodPayMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-NodPayMobile-NodPayMobileTests/Pods-NodPayMobile-NodPayMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FEB643C926BCB7830014F437 /* NodPayMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NodPayMobile-Bridging-Header.h"; sourceTree = "<group>"; };
-		FEB643CC26BCB7910014F437 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "NodPayMobile/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FEB643CD26BCB7920014F437 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = NodPayMobile/File.swift; sourceTree = "<group>"; };
+		FDF78746A31B735F913D01E5 /* Pods-NodPayBusiness-NodPayBusinessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NodPayBusiness-NodPayBusinessTests.debug.xcconfig"; path = "Target Support Files/Pods-NodPayBusiness-NodPayBusinessTests/Pods-NodPayBusiness-NodPayBusinessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FEB643C926BCB7830014F437 /* NodPayBusiness-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NodPayBusiness-Bridging-Header.h"; sourceTree = "<group>"; };
+		FEB643CC26BCB7910014F437 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "NodPayBusiness/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FEB643CD26BCB7920014F437 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = NodPayBusiness/File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				688D47F65AF763ACC462F406 /* libPods-NodPayMobile-NodPayMobileTests.a in Frameworks */,
+				688D47F65AF763ACC462F406 /* libPods-NodPayBusiness-NodPayBusinessTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,20 +80,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AE35CC9BF83167DD3581686 /* libPods-NodPayMobile.a in Frameworks */,
+				5AE35CC9BF83167DD3581686 /* libPods-NodPayBusiness.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* NodPayMobileTests */ = {
+		00E356EF1AD99517003FC87E /* NodPayBusinessTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* NodPayMobileTests.m */,
+				00E356F21AD99517003FC87E /* NodPayBusinessTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = NodPayMobileTests;
+			path = NodPayBusinessTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -104,7 +104,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* NodPayMobile */ = {
+		13B07FAE1A68108700A75B9A /* NodPayBusiness */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -115,17 +115,17 @@
 				FEB643CC26BCB7910014F437 /* GoogleService-Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				FEB643C926BCB7830014F437 /* NodPayMobile-Bridging-Header.h */,
+				FEB643C926BCB7830014F437 /* NodPayBusiness-Bridging-Header.h */,
 			);
-			name = NodPayMobile;
+			name = NodPayBusiness;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				1438E471B41626A3DA2E0E3B /* libPods-NodPayMobile.a */,
-				41E01D341C933855DFF0B291 /* libPods-NodPayMobile-NodPayMobileTests.a */,
+				1438E471B41626A3DA2E0E3B /* libPods-NodPayBusiness.a */,
+				41E01D341C933855DFF0B291 /* libPods-NodPayBusiness-NodPayBusinessTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -133,10 +133,10 @@
 		5AA880FCD7CCA9CF1700A5C9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				47100D22B798BB87255A8A6B /* Pods-NodPayMobile.debug.xcconfig */,
-				6B727F9E9316E603BFCD4A70 /* Pods-NodPayMobile.release.xcconfig */,
-				FDF78746A31B735F913D01E5 /* Pods-NodPayMobile-NodPayMobileTests.debug.xcconfig */,
-				5D7407D8ACA19B9AE297FF5C /* Pods-NodPayMobile-NodPayMobileTests.release.xcconfig */,
+				47100D22B798BB87255A8A6B /* Pods-NodPayBusiness.debug.xcconfig */,
+				6B727F9E9316E603BFCD4A70 /* Pods-NodPayBusiness.release.xcconfig */,
+				FDF78746A31B735F913D01E5 /* Pods-NodPayBusiness-NodPayBusinessTests.debug.xcconfig */,
+				5D7407D8ACA19B9AE297FF5C /* Pods-NodPayBusiness-NodPayBusinessTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -166,9 +166,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* NodPayMobile */,
+				13B07FAE1A68108700A75B9A /* NodPayBusiness */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* NodPayMobileTests */,
+				00E356EF1AD99517003FC87E /* NodPayBusinessTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				72DD9727DF1B4C49A8512241 /* Resources */,
@@ -182,8 +182,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* NodPayMobile.app */,
-				00E356EE1AD99517003FC87E /* NodPayMobileTests.xctest */,
+				13B07F961A680F5B00A75B9A /* NodPayBusiness.app */,
+				00E356EE1AD99517003FC87E /* NodPayBusinessTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,9 +191,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* NodPayMobileTests */ = {
+		00E356ED1AD99517003FC87E /* NodPayBusinessTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NodPayMobileTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NodPayBusinessTests" */;
 			buildPhases = (
 				B5BECEEA3282B4A02D26A206 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -207,14 +207,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = NodPayMobileTests;
-			productName = NodPayMobileTests;
-			productReference = 00E356EE1AD99517003FC87E /* NodPayMobileTests.xctest */;
+			name = NodPayBusinessTests;
+			productName = NodPayBusinessTests;
+			productReference = 00E356EE1AD99517003FC87E /* NodPayBusinessTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* NodPayMobile */ = {
+		13B07F861A680F5B00A75B9A /* NodPayBusiness */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NodPayMobile" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NodPayBusiness" */;
 			buildPhases = (
 				714DDC39129EA762DD002B75 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -230,9 +230,9 @@
 			);
 			dependencies = (
 			);
-			name = NodPayMobile;
-			productName = NodPayMobile;
-			productReference = 13B07F961A680F5B00A75B9A /* NodPayMobile.app */;
+			name = NodPayBusiness;
+			productName = NodPayBusiness;
+			productReference = 13B07F961A680F5B00A75B9A /* NodPayBusiness.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -252,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NodPayMobile" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NodPayBusiness" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -265,8 +265,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* NodPayMobile */,
-				00E356ED1AD99517003FC87E /* NodPayMobileTests */,
+				13B07F861A680F5B00A75B9A /* NodPayBusiness */,
+				00E356ED1AD99517003FC87E /* NodPayBusinessTests */,
 			);
 		};
 /* End PBXProject section */
@@ -333,15 +333,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile/Pods-NodPayMobile-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness/Pods-NodPayBusiness-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile/Pods-NodPayMobile-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness/Pods-NodPayBusiness-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile/Pods-NodPayMobile-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness/Pods-NodPayBusiness-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		714DDC39129EA762DD002B75 /* [CP] Check Pods Manifest.lock */ = {
@@ -359,7 +359,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NodPayMobile-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-NodPayBusiness-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -372,15 +372,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile-NodPayMobileTests/Pods-NodPayMobile-NodPayMobileTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness-NodPayBusinessTests/Pods-NodPayBusiness-NodPayBusinessTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile-NodPayMobileTests/Pods-NodPayMobile-NodPayMobileTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness-NodPayBusinessTests/Pods-NodPayBusiness-NodPayBusinessTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile-NodPayMobileTests/Pods-NodPayMobile-NodPayMobileTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness-NodPayBusinessTests/Pods-NodPayBusiness-NodPayBusinessTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5BECEEA3282B4A02D26A206 /* [CP] Check Pods Manifest.lock */ = {
@@ -398,7 +398,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NodPayMobile-NodPayMobileTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-NodPayBusiness-NodPayBusinessTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -411,15 +411,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile-NodPayMobileTests/Pods-NodPayMobile-NodPayMobileTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness-NodPayBusinessTests/Pods-NodPayBusiness-NodPayBusinessTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile-NodPayMobileTests/Pods-NodPayMobile-NodPayMobileTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness-NodPayBusinessTests/Pods-NodPayBusiness-NodPayBusinessTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile-NodPayMobileTests/Pods-NodPayMobile-NodPayMobileTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness-NodPayBusinessTests/Pods-NodPayBusiness-NodPayBusinessTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E873A9BB35953A6957070D1E /* [CP] Embed Pods Frameworks */ = {
@@ -428,15 +428,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile/Pods-NodPayMobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness/Pods-NodPayBusiness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile/Pods-NodPayMobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness/Pods-NodPayBusiness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodPayMobile/Pods-NodPayMobile-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NodPayBusiness/Pods-NodPayBusiness-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -465,7 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* NodPayMobileTests.m in Sources */,
+				00E356F31AD99517003FC87E /* NodPayBusinessTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +484,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* NodPayMobile */;
+			target = 13B07F861A680F5B00A75B9A /* NodPayBusiness */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -492,7 +492,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDF78746A31B735F913D01E5 /* Pods-NodPayMobile-NodPayMobileTests.debug.xcconfig */;
+			baseConfigurationReference = FDF78746A31B735F913D01E5 /* Pods-NodPayBusiness-NodPayBusinessTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -500,7 +500,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = NodPayMobileTests/Info.plist;
+				INFOPLIST_FILE = NodPayBusinessTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,18 +514,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NodPayMobile.app/NodPayMobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NodPayBusiness.app/NodPayBusiness";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D7407D8ACA19B9AE297FF5C /* Pods-NodPayMobile-NodPayMobileTests.release.xcconfig */;
+			baseConfigurationReference = 5D7407D8ACA19B9AE297FF5C /* Pods-NodPayBusiness-NodPayBusinessTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = NodPayMobileTests/Info.plist;
+				INFOPLIST_FILE = NodPayBusinessTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -539,13 +539,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NodPayMobile.app/NodPayMobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NodPayBusiness.app/NodPayBusiness";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47100D22B798BB87255A8A6B /* Pods-NodPayMobile.debug.xcconfig */;
+			baseConfigurationReference = 47100D22B798BB87255A8A6B /* Pods-NodPayBusiness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -554,7 +554,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YQJ82VB6T9;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = NodPayMobile/Info.plist;
+				INFOPLIST_FILE = NodPayBusiness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,9 +565,9 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodpay.app;
-				PRODUCT_NAME = NodPayMobile;
+				PRODUCT_NAME = NodPayBusiness;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "NodPayMobile-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NodPayBusiness-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -576,7 +576,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B727F9E9316E603BFCD4A70 /* Pods-NodPayMobile.release.xcconfig */;
+			baseConfigurationReference = 6B727F9E9316E603BFCD4A70 /* Pods-NodPayBusiness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -584,7 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YQJ82VB6T9;
-				INFOPLIST_FILE = NodPayMobile/Info.plist;
+				INFOPLIST_FILE = NodPayBusiness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,9 +595,9 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nodpay.app;
-				PRODUCT_NAME = NodPayMobile;
+				PRODUCT_NAME = NodPayBusiness;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "NodPayMobile-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "NodPayBusiness-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -729,7 +729,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NodPayMobileTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NodPayBusinessTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -738,7 +738,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NodPayMobile" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NodPayBusiness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -747,7 +747,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NodPayMobile" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "NodPayBusiness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

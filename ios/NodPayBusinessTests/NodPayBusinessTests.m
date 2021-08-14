@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface NodPayMobileTests : XCTestCase
+@interface NodPayBusinessTests : XCTestCase
 
 @end
 
-@implementation NodPayMobileTests
+@implementation NodPayBusinessTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

@@ -51,7 +51,7 @@
 		<string>fbshareextension</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>NodPayMobile</string>
+	<string>NodPayBusiness</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'NodPayMobile' do
+target 'NodPayBusiness' do
   config = use_native_modules!
 
   use_react_native!(
@@ -42,7 +42,7 @@ permissions_path = '../node_modules/react-native-permissions/ios'
 #  pod 'Permission-StoreKit', :path => "#{permissions_path}/StoreKit"
   # React-native-permissions end
 
-  target 'NodPayMobileTests' do
+  target 'NodPayBusinessTests' do
     inherit! :complete
     # Pods for testing
   end
