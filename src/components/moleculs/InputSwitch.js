@@ -4,7 +4,12 @@ import {Switch} from 'react-native-switch';
 
 // where local files imported
 import {color, dimens, fonts} from '../../utils';
-
+/**
+ * Switch button input
+ * @param  {string} label         input label
+ * @param  {boolean} value        is the value true or false
+ * @param  {function} onChange    When value is changed
+ */
 const InputSwitch = ({label, value, onChange}) => {
   return (
     <TouchableOpacity

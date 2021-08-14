@@ -192,7 +192,10 @@ const Feedback = ({navigation}) => {
             />
           </View>
 
-          <KeyboardAvoidingView behavior={Platform.OS == 'ios' && 'position'}>
+          <KeyboardAvoidingView
+            behavior="padding"
+            keyboardVerticalOffset={0}
+            enabled={Platform.OS === 'android' ? false : true}>
             <Button
               title="Submit Feedback"
               titleStyle={{color: 'white'}}

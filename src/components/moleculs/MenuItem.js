@@ -3,7 +3,24 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {Switch} from 'react-native-switch';
 import {color, dimens, fonts} from '../../utils';
 import {Right} from '../../assets';
-
+/**
+ * Menu option
+ * @param  {imageRef} icon            Icon reference
+ * @param  {number} iconRadius        Size of border radius of icon
+ * @param  {string} iconBackground    icon background color
+ * @param  {boolean} iconIsShadow     does icon have shadow
+ * @param  {number} iconSize          size of icon
+ * @param  {string} title             menu title
+ * @param  {object} titleStyle        custom menu title style
+ * @param  {string} subtitle          menu subtitle
+ * @param  {react componenet} subtitleComponent   custom menu subtitle
+ * @param  {react componenet} subtitle2Component  other custom menu subtitle
+ * @param  {string} info              Menu information
+ * @param  {boolean} withoutArrow     Is menu with arrow
+ * @param  {imageRef} rightIcon       Menu's right icon
+ * @param  {function} onPress         When menu is pressed
+ * @param  {object} toggleSwitch      toggle value and onchange function
+ */
 const MenuItem = ({
   icon,
   iconRadius,

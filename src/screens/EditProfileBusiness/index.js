@@ -4,7 +4,6 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
   Platform,
-  StatusBar,
 } from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -31,7 +30,6 @@ const EditProfileBusiness = ({navigation}) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={color.bg_grey} />
       <PageTitle
         isCloseMode
         onPressClose={() => navigation.goBack()}

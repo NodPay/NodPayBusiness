@@ -10,6 +10,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
+  ImageBackground,
 } from 'react-native';
 import Clipboard from '@react-native-community/clipboard';
 
@@ -22,7 +23,7 @@ import {
   Loading,
   Modal,
 } from '../../components';
-import {color, dimens, fonts} from '../../utils';
+import {color, dimens, fonts, wait} from '../../utils';
 import {
   CardActive,
   Exchange,
@@ -40,6 +41,7 @@ import {
   Next,
   LockWhite,
   ModalSuccess,
+  BgBottomTab,
 } from '../../assets';
 import BottomSheet, {BottomSheetBackdrop} from '@gorhom/bottom-sheet';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -53,6 +55,7 @@ const MyCard = ({navigation, route}) => {
   const [isCardLocked, setIsCardLocked] = useState(false);
   const [modalSuccess, setModalSuccess] = useState(false);
   const [isPhysicalCardActive, setIsPhysicalCardActive] = useState(undefined);
+  const [isShowingCopyTooltip, setIsShowingCopyTooltip] = useState(false);
 
   // If there is route params "isPinChanged", show success modal
   useEffect(() => {
@@ -70,6 +73,12 @@ const MyCard = ({navigation, route}) => {
     setIsPhysicalCardActive(true);
     return () => {};
   }, []);
+
+  useEffect(() => {
+    if (isShowingCopyTooltip) {
+      wait(500).then(() => setIsShowingCopyTooltip(false));
+    }
+  }, [isShowingCopyTooltip]);
 
   // Bottom sheet settings
   const refReqCardSheet = useRef(null);
@@ -100,7 +109,7 @@ const MyCard = ({navigation, route}) => {
           titleStyle={styles.pageTitle}
           isNoBackButton
         />
-        <View style={styles.innerContainer}>
+        <ScrollView contentContainerStyle={styles.innerContainer}>
           {/* Card(s) */}
           <TouchableOpacity
             activeOpacity={0.8}
@@ -184,6 +193,7 @@ const MyCard = ({navigation, route}) => {
                 style={styles.button}
                 onPress={() => {
                   Clipboard.setString('1238 2914 2910 0984');
+                  setIsShowingCopyTooltip(true);
                 }}>
                 <Image
                   source={Copy}
@@ -227,15 +237,43 @@ const MyCard = ({navigation, route}) => {
               },
             }}
           />
-          <MenuItem
-            icon={NameCardPurple}
-            title="Request Physical Card"
-            onPress={() => {
-              refReqCardSheet.current?.expand();
-            }}
-          />
+          {isShowingCopyTooltip ? (
+            // Copy CCV Tooltip
+            <View
+              style={{
+                backgroundColor: 'black',
+                width: '100%',
+                borderRadius: dimens.default,
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                paddingVertical: dimens.small,
+              }}>
+              <Image
+                source={CheckCircle}
+                style={{width: 28, height: 28, marginTop: dimens.small}}
+              />
+              <Text
+                style={{
+                  color: 'white',
+                  fontSize: dimens.default,
+                  marginLeft: dimens.small,
+                }}>
+                Virutal card number copied
+              </Text>
+            </View>
+          ) : (
+            <MenuItem
+              icon={NameCardPurple}
+              title="Request Physical Card"
+              onPress={() => {
+                refReqCardSheet.current?.expand();
+              }}
+            />
+          )}
+
           {/* Menu Item End */}
-        </View>
+        </ScrollView>
 
         {/* Bottom Tab Navigator */}
         <View style={styles.bottomTab}>
@@ -246,34 +284,62 @@ const MyCard = ({navigation, route}) => {
               alignItems: 'center',
             }}>
             <TouchableOpacity
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
               onPress={() => {
                 navigation.navigate('Home');
               }}>
-              <Image source={HomeInactive} style={{width: 30, height: 30}} />
+              <Image
+                source={HomeInactive}
+                style={{width: 30, height: 30, marginBottom: 6}}
+              />
               <Text>Home</Text>
             </TouchableOpacity>
             <View>
               <TouchableOpacity
                 style={{
                   top: -35,
-                  height: 80,
-                  width: 80,
-                  backgroundColor: color.bg_color,
+                  backgroundColor: color.btn_white_2,
+                  padding: 10,
                   borderRadius: 40,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  borderWidth: 10,
-                  borderColor: color.btn_white_2,
                 }}
-                onPress={() => {
-                  navigation.navigate('Transaction');
-                }}>
-                <Image source={Exchange} style={{width: 30, height: 30}} />
+                onPress={() => navigation.navigate('Transaction')}>
+                <ImageBackground
+                  source={BgBottomTab}
+                  style={{
+                    height: 64,
+                    width: 64,
+                    borderRadius: 40,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    resizeMode: 'cover',
+                  }}>
+                  <Image source={Exchange} style={{width: 30, height: 30}} />
+                </ImageBackground>
               </TouchableOpacity>
-              <Text>Exchange</Text>
+              <Text
+                style={{
+                  position: 'absolute',
+                  left: Platform.OS === 'ios' ? -10 : 0,
+                  bottom: 15,
+                  width: Platform.OS === 'ios' ? 110 : 100,
+                }}>
+                Send & Request
+              </Text>
             </View>
-            <TouchableOpacity>
-              <Image source={CardActive} style={{width: 30, height: 30}} />
+            <TouchableOpacity
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Image
+                source={CardActive}
+                style={{width: 30, height: 30, marginBottom: 6}}
+              />
               <Text>Card</Text>
             </TouchableOpacity>
           </View>
@@ -332,6 +398,7 @@ const MyCard = ({navigation, route}) => {
             <Button
               onPress={() => {
                 navigation.navigate('RequestCard');
+                refReqCardSheet.current?.close();
               }}
               title="Continue"
               titleStyle={{

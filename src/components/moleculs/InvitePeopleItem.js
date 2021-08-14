@@ -4,7 +4,12 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 import {color, dimens, fonts} from '../../utils';
 import {InviteCompleted} from '../../assets';
 import {Button} from '../../components';
-
+/**
+ * @param  {string} backgroundIcon  background color of icon
+ * @param  {string} name            person name
+ * @param  {number} step            Current step
+ * @param  {function} onPressRight  When right button is pressed
+ */
 const InvitePeopleItem = ({backgroundIcon, name, step, onPressRight}) => {
   const stepInvite = ['Installed', 'Verified', 'Completed!'];
   const isCompleted = step === 3;

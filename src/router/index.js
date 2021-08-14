@@ -216,8 +216,8 @@ const AppDrawer = () => {
       drawerStyle={{backgroundColor: 'transparent'}}
       screenOptions={{unmountOnBlur: true}}
       drawerContent={props => <DrawerComponent {...props} />}>
-      <Drawer.Screen name="MyCard" component={MyCard} />
       <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="MyCard" component={MyCard} />
     </Drawer.Navigator>
   );
 };

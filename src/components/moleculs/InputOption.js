@@ -1,25 +1,23 @@
 import React from 'react';
-import {useReducer} from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
 //where local files imported
 import {Male, Female, MaleActive, FemaleActive} from '../../assets';
-import {setFormRegister} from '../../store/action';
 import {dimens, fonts} from '../../utils';
 import {Gap, FormLabel} from '../atoms';
-
-const InputOption = ({user, setUser, dispatch}) => {
+/**
+ * @param  {object} user          user object containing user data
+ * @param  {function} onPress1    when data is changed option 1
+ * @param  {function} onPress2    when data is changed option 2
+ */
+const InputOption = ({user, onPress1, onPress2}) => {
   return (
     <>
       <FormLabel label="Gender" />
       <Gap t={dimens.default_12} />
       <View style={styles.container}>
         <View style={styles.genderContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setUser({...user, gender: 'male'});
-              dispatch(setFormRegister('gender', 'male'));
-            }}>
+          <TouchableOpacity onPress={onPress1}>
             <Image
               source={user.gender == 'male' ? MaleActive : Male}
               style={styles.icon}
@@ -29,11 +27,7 @@ const InputOption = ({user, setUser, dispatch}) => {
         </View>
         <Gap r={dimens.default_16} />
         <View style={styles.genderContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              setUser({...user, gender: 'female'});
-              dispatch(setFormRegister('gender', 'female'));
-            }}>
+          <TouchableOpacity onPress={onPress2}>
             <Image
               source={user.gender == 'female' ? FemaleActive : Female}
               style={styles.icon}

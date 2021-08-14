@@ -23,14 +23,15 @@ import {
 } from '../components';
 import {SplashWaveGradient} from '../assets';
 import {clearAll, color, dimens, fonts, wait, storeData} from '../utils';
+import useStateContext from '../store/useStateContext';
+import {setFormLoginEmail} from '../store/action';
 
 const LoginEmail = ({navigation}) => {
+  const {state, dispatch} = useStateContext();
   const EMAIL = 'admin@nodpay.app';
   const PASSWORD = 'admin';
 
   const [isLoading, setIsLoading] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [submited, setSubmited] = useState(false);
   const [isKeyboardShow, setIsKeyboardShow] = useState(false);
   let keyboardDidShowListener;
@@ -67,7 +68,10 @@ const LoginEmail = ({navigation}) => {
   const onLogin = () => {
     setIsLoading(true);
     // check auth
-    if (email == '' || password == '') {
+    if (
+      state.formLoginEmail.email == '' ||
+      state.formLoginEmail.password == ''
+    ) {
       wait(100).then(() => {
         setIsLoading(false);
         setError({
@@ -75,7 +79,10 @@ const LoginEmail = ({navigation}) => {
           message: "Email or Password Can't be empty.",
         });
       });
-    } else if (email != EMAIL && password != PASSWORD) {
+    } else if (
+      state.formLoginEmail.email != EMAIL &&
+      state.formLoginEmail.password != PASSWORD
+    ) {
       wait(100).then(() => {
         setIsLoading(false);
         setError({
@@ -124,15 +131,19 @@ const LoginEmail = ({navigation}) => {
                 labelStyle={{color: color.btn_black}}
                 label="Email"
                 placeholder="Email"
-                value={email}
-                onChangeText={setEmail}
+                value={state.formLoginEmail.email}
+                onChangeText={text =>
+                  dispatch(setFormLoginEmail('email', text))
+                }
               />
               <InputPassword
                 labelStyle={{color: color.btn_black}}
                 label="Password"
                 placeholder="Password"
-                value={password}
-                onChangeText={setPassword}
+                value={state.formLoginEmail.password}
+                onChangeText={text =>
+                  dispatch(setFormLoginEmail('password', text))
+                }
               />
             </View>
             <LinkAction

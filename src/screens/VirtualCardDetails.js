@@ -74,7 +74,7 @@ const VirtualCardDetails = ({navigation, route}) => {
         <PageTitle
           title="Virtual Card Details"
           titleStyle={styles.pageTitle}
-          isNoBackButton
+          isBlackArrow
         />
         <View style={styles.innerContainer}>
           {/* Card(s) */}

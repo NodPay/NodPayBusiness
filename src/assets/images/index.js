@@ -39,6 +39,7 @@ import BGButton from './bg_button.png';
 import InviteBusiness from './invite_business.png';
 import Starbucks from './starbucks.png';
 import PurpleDottedLine from './purple_dottedline.png';
+import BgBottomTab from './bg_bottom_tab.png';
 
 export {
   PurpleDottedLine,
@@ -80,4 +81,5 @@ export {
   InviteBusiness,
   Starbucks,
   PhysicalCardActive,
+  BgBottomTab,
 };

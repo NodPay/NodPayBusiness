@@ -4,7 +4,12 @@ import {StyleSheet, Image, Text, View, TouchableOpacity} from 'react-native';
 //where local files imported
 import {dimens, fonts, color} from '../../utils';
 import {DownBlack, UpBlack} from '../../assets';
-
+/**
+ * Accordion in FAQ, help section
+ * @param  {string} title       FAQ title
+ * @param  {string} description FAQ description
+ * @param  {func} onPress       When FAQ is pressed
+ */
 const FaqAccordionItem = ({title, description, onPress}) => {
   const [showDescription, setShowDescription] = useState(false);
 

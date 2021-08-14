@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, SafeAreaView, Image, StatusBar} from 'react-native';
+import {StyleSheet, View, SafeAreaView, Image} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 const Tab = createMaterialTopTabNavigator();
@@ -16,7 +16,6 @@ const NotificationBusiness = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={color.bg_grey} />
       <PageTitle
         isBlackArrow
         title="Notifications"
@@ -46,7 +45,7 @@ export default NotificationBusiness;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: color.bg_grey,
+    backgroundColor: color.bg_greyy,
   },
   bg_contact: {
     position: 'absolute',

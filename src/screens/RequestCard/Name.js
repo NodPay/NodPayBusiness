@@ -1,19 +1,14 @@
-import React, {useState} from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {
-  Button,
-  ErrorMessage,
-  Gap,
-  InputCheck,
-  InputText,
-  SelectAddressList,
-} from '../../components';
+import React from 'react';
+import {ScrollView, StyleSheet, Text} from 'react-native';
+import {Gap, InputText} from '../../components';
 import {color, dimens, fonts} from '../../utils';
+import useStateContext from '../../store/useStateContext';
+import {setFormRequestPhysicalCard} from '../../store/action';
 
 // First step of Request Physical Card flows
 const Name = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const {state, dispatch} = useStateContext();
+  const {firstName, lastName} = state;
 
   return (
     <ScrollView
@@ -26,14 +21,18 @@ const Name = () => {
       <InputText
         label="First Name"
         value={firstName}
-        onChangeText={setFirstName}
+        onChangeText={val => {
+          dispatch(setFormRequestPhysicalCard('firstName', val));
+        }}
       />
       {/* <ErrorMessage message="Email field is empty" /> */}
 
       <InputText
         label="Last Name"
         value={lastName}
-        onChangeText={setLastName}
+        onChangeText={val => {
+          dispatch(setFormRequestPhysicalCard('lastName', val));
+        }}
       />
       <Gap b={dimens.default_16} />
     </ScrollView>

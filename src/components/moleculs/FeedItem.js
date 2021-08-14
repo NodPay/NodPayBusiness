@@ -15,7 +15,17 @@ import {
   People,
   Person,
 } from '../../assets';
-
+/**
+ * Item of feed section
+ * @param  {string} type                What kind of feed item
+ * @param  {object} item                information of feed
+ * @param  {function} onPressLove       When love icon is pressed
+ * @param  {function} onPressComment    When comment icon is pressed
+ * @param  {function} onPressEmoji      When emoji icon is pressed
+ * @param  {boolean} isHideComment      is Comment icon shown
+ * @param  {boolean} isCommentReply     is comment replied
+ * @param  {function} onPressPhoto      when photo is pressed
+ */
 const FeedItem = ({
   type,
   item = {},

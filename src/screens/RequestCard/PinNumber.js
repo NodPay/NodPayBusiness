@@ -5,18 +5,19 @@ import {
   View,
   SafeAreaView,
   TouchableOpacity,
-  KeyboardAvoidingView,
-  Platform,
 } from 'react-native';
 
 // where local files imported
 import {color, dimens, fonts} from '../../utils';
-import {Button, PageTitle, InputPIN} from '../../components';
+import {InputPIN} from '../../components';
+import useStateContext from '../../store/useStateContext';
+import {setFormRequestPhysicalCard} from '../../store/action';
 
 const PinNumber = () => {
   // state for text input
   const [showPassword, setShowPassword] = useState(false);
-  const [value, setValue] = useState('');
+  const {state, dispatch} = useStateContext();
+  const {pinNumber} = state;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,9 +26,11 @@ const PinNumber = () => {
         <View style={styles.totalAmount}>
           <Text style={styles.label}>Enter PIN Number</Text>
           <InputPIN
-            value={value}
+            value={pinNumber}
             showPassword={showPassword}
-            onChange={setValue}
+            onChange={val => {
+              dispatch(setFormRequestPhysicalCard('pinNumber', val));
+            }}
           />
         </View>
         {/* Total Amount End */}

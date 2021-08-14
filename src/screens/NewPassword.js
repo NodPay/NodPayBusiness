@@ -20,11 +20,13 @@ import {
 } from '../components';
 import {color, dimens, fonts} from '../utils';
 import {LeftArrowBlack, ModalSuccess} from '../assets';
+import useStateContext from '../store/useStateContext';
+import {setFormForgotPassword} from '../store/action';
 
 const NewPassword = ({navigation}) => {
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [modalSuccess, setModalSuccess] = useState(false);
+  const {state, dispatch} = useStateContext();
+  const {password, confirmPassword} = state;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,30 +46,36 @@ const NewPassword = ({navigation}) => {
         }}
       />
 
+      <PageTitle
+        title="Forgot Password"
+        isBlackArrow
+        containerStyle={{backgroundColor: color.btn_white_2}}
+        titleStyle={{color: 'black'}}
+      />
       <View style={styles.inner_container}>
-        <PageTitle
-          title="Forgot Password"
-          isBlackArrow
-          containerStyle={{backgroundColor: color.btn_white_2}}
-          titleStyle={{color: 'black'}}
-        />
-
         <SectionTitle type="auth" title="Reset Your Password" />
 
         <InputPassword
           label="New Password"
           value={password}
-          onChangeText={setPassword}
+          onChangeText={val => {
+            dispatch(setFormForgotPassword('password', val));
+          }}
         />
         <InputPassword
           label="Confirm New Password"
           value={confirmPassword}
-          onChangeText={setConfirmPassword}
+          onChangeText={val => {
+            dispatch(setFormForgotPassword('confirmPassword', val));
+          }}
         />
         <ErrorMessage message="Password strength is too weak. Please use combination of number and symbols" />
       </View>
 
-      <KeyboardAvoidingView behavior={Platform.OS == 'ios' && 'position'}>
+      <KeyboardAvoidingView
+        behavior="padding"
+        keyboardVerticalOffset={0}
+        enabled={Platform.OS === 'android' ? false : true}>
         <View style={styles.btnContainer}>
           <Button
             title="Reset Password"

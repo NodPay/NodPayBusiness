@@ -160,13 +160,14 @@ const Profile = ({navigation}) => {
   // button add friend
   const [friend, setFriend] = useState(false);
   // show dropdown
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.bg_blue}>
         <PageTitle
+          isWhiteArrow
           isOtherProfile
           onEdit={() => {
             setShow(!show);
@@ -191,7 +192,10 @@ const Profile = ({navigation}) => {
           {/* Button Friend */}
           <View style={{padding: dimens.default, marginTop: dimens.default}}>
             <Button
-              onPress={() => setFriend(!friend)}
+              onPress={() => {
+                setFriend(!friend);
+                navigation.navigate('Contact');
+              }}
               title={friend ? 'Unfriend' : '+ Add Friends'}
               btnStyle={{
                 backgroundColor: friend ? color.btn_white : color.bg_color,

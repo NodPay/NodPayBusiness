@@ -23,14 +23,17 @@ import {
 } from '../components';
 import {SplashWaveGradient2} from '../assets';
 import {clearAll, color, dimens, fonts, wait, storeData} from '../utils';
+import useStateContext from '../store/useStateContext';
+import {setFormLoginEmailBusiness} from '../store/action';
 
 const LoginEmailBusiness = ({navigation}) => {
+  const {state, dispatch} = useStateContext();
   const EMAIL = 'admin@nodpay.app';
   const PASSWORD = 'admin';
+  const EMAIL_EMPLOYEE = 'employee@nodpay.app';
+  const PASSWORD_EMPLOYEE = 'employee';
 
   const [isLoading, setIsLoading] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [submited, setSubmited] = useState(false);
   const [isKeyboardShow, setIsKeyboardShow] = useState(false);
   let keyboardDidShowListener;
@@ -67,7 +70,10 @@ const LoginEmailBusiness = ({navigation}) => {
   const onLogin = () => {
     setIsLoading(true);
     // check auth
-    if (email == '' || password == '') {
+    if (
+      state.formLoginEmailBusiness.email == '' ||
+      state.formLoginEmailBusiness.password == ''
+    ) {
       wait(100).then(() => {
         setIsLoading(false);
         setError({
@@ -75,7 +81,12 @@ const LoginEmailBusiness = ({navigation}) => {
           message: "Email or Password Can't be empty.",
         });
       });
-    } else if (email != EMAIL && password != PASSWORD) {
+    } else if (
+      state.formLoginEmailBusiness.email != EMAIL &&
+      state.formLoginEmailBusiness.password != PASSWORD &&
+      state.formLoginEmailBusiness.email != EMAIL_EMPLOYEE &&
+      state.formLoginEmailBusiness.password != PASSWORD_EMPLOYEE
+    ) {
       wait(100).then(() => {
         setIsLoading(false);
         setError({
@@ -87,9 +98,14 @@ const LoginEmailBusiness = ({navigation}) => {
       wait(300).then(() => {
         console.log('login success');
         storeData('session', {
-          role: email == EMAIL && password == PASSWORD ? 'admin' : 'employee',
+          role:
+            state.formLoginEmailBusiness.email == EMAIL &&
+            state.formLoginEmailBusiness.password == PASSWORD
+              ? 'admin'
+              : 'employee',
           isLogin: true, // if auth success, then save token for current user then user doesn't need to relogin
           isBoarding: true,
+          isBusiness: true,
         });
         setError({status: false, message: ''});
         navigation.reset({
@@ -118,15 +134,19 @@ const LoginEmailBusiness = ({navigation}) => {
                 labelStyle={{color: 'white'}}
                 label="Email"
                 placeholder="Email"
-                value={email}
-                onChangeText={setEmail}
+                value={state.formLoginEmailBusiness.email}
+                onChangeText={text =>
+                  dispatch(setFormLoginEmailBusiness('email', text))
+                }
               />
               <InputPassword
                 labelStyle={{color: 'white'}}
                 label="Password"
                 placeholder="Password"
-                value={password}
-                onChangeText={setPassword}
+                value={state.formLoginEmailBusiness.password}
+                onChangeText={text =>
+                  dispatch(setFormLoginEmailBusiness('password', text))
+                }
               />
             </View>
             <LinkAction
@@ -169,7 +189,7 @@ const LoginEmailBusiness = ({navigation}) => {
                 marginTop: dimens.default_12,
               }}
               titleStyle={{fontFamily: fonts.sofia_bold}}
-              onPress={() => navigation.navigate('RegisterBusiness')}
+              onPress={() => navigation.navigate('Register')}
             />
           )}
         </View>

@@ -1,30 +1,19 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import React from 'react';
+import {StyleSheet, View, ScrollView} from 'react-native';
 
 // where local files imported
-import {setFormRegister} from '../../store/action';
+import {setFormEditProfile} from '../../store/action';
 import useStateContext from '../../store/useStateContext';
-import {color, dimens, fonts} from '../../utils';
+import {color, dimens} from '../../utils';
 import {Gap} from '../atoms';
 import {SectionTitle, InputPhoto, InputText, InputOption} from '../moleculs';
+
 /**
  * @param  {bool} {isFamilyRelation if its true, render the family relation component
  * @param  {bool} withoutSectionTitle} if its true, render sectionTitle component
  */
 const PersonalDetailsSection = ({isFamilyRelation, withoutSectionTitle}) => {
-  const [user, setUser] = useState({
-    firstName: '',
-    lastName: '',
-    username: '',
-    age: '',
-    gender: '',
-    email: '',
-    shortBio: '',
-  });
-
-  const {dispatch} = useStateContext();
-
-  const [familyRelation, setFamilyRelation] = useState('');
+  const {state, dispatch} = useStateContext();
 
   if (isFamilyRelation) {
     return (
@@ -45,11 +34,10 @@ const PersonalDetailsSection = ({isFamilyRelation, withoutSectionTitle}) => {
         <Gap t={-50} />
 
         <InputText
-          value={familyRelation}
+          value={state.formEditProfile.familyRelationName}
           placeholder="Enter name.."
           onChangeText={value => {
-            setFamilyRelation(value);
-            dispatch(setFormRegister('familyRelationName', value));
+            dispatch(setFormEditProfile('familyRelationName', value));
           }}
         />
         <Gap b={50} />
@@ -81,55 +69,41 @@ const PersonalDetailsSection = ({isFamilyRelation, withoutSectionTitle}) => {
       <InputPhoto type="regular" />
       <InputText
         label="First Name"
-        value={user.firstName}
-        onChangeText={value => {
-          setUser({...user, firstName: value});
-          dispatch(setFormRegister('firstName', value));
-        }}
+        value={state.formEditProfile.firstName}
+        onChangeText={value => dispatch(setFormEditProfile('firstName', value))}
       />
       <InputText
         label="Last Name"
-        value={user.lastName}
-        onChangeText={value => {
-          setUser({...user, lastName: value});
-          dispatch(setFormRegister('lastName', value));
-        }}
+        value={state.formEditProfile.lastName}
+        onChangeText={value => dispatch(setFormEditProfile('lastName', value))}
       />
       <InputText
         label="Username"
-        value={user.username}
-        onChangeText={value => {
-          setUser({...user, username: value});
-          dispatch(setFormRegister('username', value));
-        }}
+        value={state.formEditProfile.username}
+        onChangeText={value => dispatch(setFormEditProfile('username', value))}
       />
       <InputText
         label="Age"
         keyboardType="number-pad"
-        value={user.age}
-        onChangeText={value => {
-          setUser({...user, age: value});
-          dispatch(setFormRegister('age', value));
-        }}
+        value={state.formEditProfile.age}
+        onChangeText={value => dispatch(setFormEditProfile('age', value))}
       />
       <Gap t={dimens.default_16} />
-      <InputOption user={user} setUser={setUser} dispatch={dispatch} />
+      <InputOption
+        user={state.formEditProfile}
+        onPress1={() => dispatch(setFormEditProfile('gender', 'male'))}
+        onPress2={() => dispatch(setFormEditProfile('gender', 'female'))}
+      />
       <InputText
         label="Email"
-        value={user.email}
+        value={state.formEditProfile.email}
         keyboardType="email-address"
-        onChangeText={value => {
-          setUser({...user, email: value});
-          dispatch(setFormRegister('email', value));
-        }}
+        onChangeText={value => dispatch(setFormEditProfile('email', value))}
       />
       <InputText
         label="Short Bio"
-        value={user.shortBio}
-        onChangeText={value => {
-          setUser({...user, shortBio: value});
-          dispatch(setFormRegister('bio', value));
-        }}
+        value={state.formEditProfile.shortBio}
+        onChangeText={value => dispatch(setFormEditProfile('bio', value))}
       />
       <Gap b={dimens.default_16} />
     </ScrollView>

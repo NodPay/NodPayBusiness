@@ -23,15 +23,15 @@ import {
 } from '../components';
 import {SplashWaveGradient} from '../assets';
 import {clearAll, color, dimens, fonts, storeData, wait} from '../utils';
+import useStateContext from '../store/useStateContext';
+import {setFormLoginPhone} from '../store/action';
 
 const LoginPhone = ({navigation}) => {
+  const {state, dispatch} = useStateContext();
   const PHONE_NUMBER = '000000000000';
   const PASSWORD = 'admin';
 
   const [isLoading, setIsLoading] = useState(false);
-  const [code, setCode] = useState('1');
-  const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
   const [submited, setSubmited] = useState(false);
   const [isKeyboardShow, setIsKeyboardShow] = useState(false);
   let keyboardDidShowListener;
@@ -69,7 +69,10 @@ const LoginPhone = ({navigation}) => {
   const onLogin = () => {
     setIsLoading(true);
     // check auth
-    if (phone == '' || password == '') {
+    if (
+      state.formLoginPhone.phone == '' ||
+      state.formLoginPhone.password == ''
+    ) {
       wait(100).then(() => {
         setIsLoading(false);
         setError({
@@ -77,7 +80,10 @@ const LoginPhone = ({navigation}) => {
           message: "Phone Number or Password Can't be empty.",
         });
       });
-    } else if (phone != PHONE_NUMBER && password != PASSWORD) {
+    } else if (
+      state.formLoginPhone.phone != PHONE_NUMBER &&
+      state.formLoginPhone.password != PASSWORD
+    ) {
       wait(100).then(() => {
         setIsLoading(false);
         setError({
@@ -125,17 +131,21 @@ const LoginPhone = ({navigation}) => {
                 labelStyle={{color: color.btn_black}}
                 label="Mobile Number"
                 placeholder="Mobile Number"
-                phoneCode={code}
-                value={phone}
-                onChangeText={setPhone}
-                onChangeCode={setCode}
+                phoneCode={state.formLoginPhone.code}
+                value={state.formLoginPhone.phone}
+                onChangeText={text =>
+                  dispatch(setFormLoginPhone('phone', text))
+                }
+                onChangeCode={text => dispatch(setFormLoginPhone('code', text))}
               />
               <InputPassword
                 labelStyle={{color: color.btn_black}}
                 label="Password"
                 placeholder="Password"
-                value={password}
-                onChangeText={setPassword}
+                value={state.formLoginPhone.password}
+                onChangeText={text =>
+                  dispatch(setFormLoginPhone('password', text))
+                }
               />
             </View>
             <LinkAction

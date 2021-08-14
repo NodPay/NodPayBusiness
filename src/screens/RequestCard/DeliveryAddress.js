@@ -8,12 +8,14 @@ import {
   SelectAddressList,
 } from '../../components';
 import {color, dimens, fonts} from '../../utils';
+import useStateContext from '../../store/useStateContext';
+import {setFormRequestPhysicalCard} from '../../store/action';
 
 // First step of Request Physical Card flows
 const DeliveryAddress = () => {
-  const [postalCode, setPostalCode] = useState('');
-  const [isSelectNewAddress, setIsSelectNewAddress] = useState(false);
   const [isNewAddress, setIsNewAddress] = useState(false);
+  const {state, dispatch} = useStateContext();
+  const {isSelectNewAddress, newAddress} = state;
 
   return (
     <ScrollView
@@ -28,7 +30,9 @@ const DeliveryAddress = () => {
           label="My Current Address"
           labelStyle={styles.contentTitle}
           value={isSelectNewAddress}
-          onChange={setIsSelectNewAddress}
+          onChange={val => {
+            dispatch(setFormRequestPhysicalCard('isSelectNewAddress', val));
+          }}
         />
         <Text style={styles.description}>2049 Center Street</Text>
         <Text style={styles.generalAddress}>Albany, OR, Oregon, 8989</Text>
@@ -53,15 +57,13 @@ const DeliveryAddress = () => {
             <Text style={styles.contentTitle}>New Address</Text>
 
             <InputText
-              value={postalCode}
+              value={newAddress}
               containerStyle={{marginTop: 0}}
               inputStyle={{backgroundColor: color.grey_7}}
               placeholder="Enter your new address"
               placeholderTextColor={color.grey_2}
-              onChangeText={value => {
-                setPostalCode(value);
-                //   dispatch(setFormRegister('address', value));
-                //   dispatch(setFormRegisterBusiness('address', value));
+              onChange={val => {
+                dispatch(setFormRequestPhysicalCard('newAddress', val));
               }}
             />
           </View>

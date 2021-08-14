@@ -6,7 +6,8 @@ import {
   Image,
   TouchableOpacity,
   Text,
-  StatusBar,
+  Platform,
+  ImageBackground,
 } from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
@@ -24,64 +25,112 @@ import {
 } from '../../components/';
 
 import {color, dimens, fonts} from '../../utils/';
-import {BookActive, Exchange, HomeInactive, People1} from '../../assets/';
+import {
+  BgBottomTab,
+  BookActive,
+  Exchange,
+  HomeInactive,
+  People1,
+} from '../../assets/';
 import Report from './Report';
 import Transaction from './Transaction';
 
 const BookKeeping = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={color.bg_grey} />
       <PageTitle title="Book Keeping" titleStyle={{color: color.btn_black}} />
       <View style={styles.wrapper}>
         <Tab.Navigator tabBar={props => <Tabbed {...props} />}>
           <Tab.Screen name="Report" component={Report} />
           <Tab.Screen name="Transaction" component={Transaction} />
         </Tab.Navigator>
-      </View>
-      {/* Bottom Tab Navigator */}
-      <View style={styles.bottomTab}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-          }}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('HomeBusiness');
+        {/* Bottom Tab Navigator */}
+        <View style={styles.bottomTab}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              alignItems: 'center',
             }}>
-            <Image source={HomeInactive} style={{width: 30, height: 30}} />
-            <Text>Home</Text>
-          </TouchableOpacity>
-          <View>
             <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('HomeBusiness');
+              }}
               style={{
-                top: -35,
-                height: 80,
-                width: 80,
-                backgroundColor: color.bg_color,
-                borderRadius: 40,
                 justifyContent: 'center',
                 alignItems: 'center',
-                borderWidth: 10,
-                borderColor: color.btn_white_2,
-              }}
-              onPress={() => navigation.navigate('BusinessTransaction')}>
-              <Image source={Exchange} style={{width: 30, height: 30}} />
+              }}>
+              <Image
+                source={HomeInactive}
+                style={{width: 30, height: 30, marginBottom: 6}}
+              />
+              <Text>Home</Text>
             </TouchableOpacity>
-            <Text>Exchange</Text>
+            <View>
+              <TouchableOpacity
+                style={{
+                  top: -35,
+                  backgroundColor: color.btn_white_2,
+                  padding: 10,
+                  borderRadius: 40,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                onPress={() => navigation.navigate('Transaction')}>
+                <ImageBackground
+                  source={BgBottomTab}
+                  style={{
+                    height: 64,
+                    width: 64,
+                    borderRadius: 40,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    resizeMode: 'cover',
+                  }}>
+                  <Image source={Exchange} style={{width: 30, height: 30}} />
+                </ImageBackground>
+              </TouchableOpacity>
+              <Text
+                style={{
+                  position: 'absolute',
+                  left: Platform.OS === 'ios' ? -10 : 0,
+                  bottom: 15,
+                  width: Platform.OS === 'ios' ? 110 : 100,
+                }}>
+                Send & Request
+              </Text>
+            </View>
+            <TouchableOpacity
+              onPress={() => {}}
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'relative',
+              }}>
+              <Image
+                source={BookActive}
+                style={{
+                  width: 30,
+                  height: 30,
+                  alignSelf: 'center',
+                  marginBottom: 18,
+                }}
+              />
+              <Text
+                style={{
+                  position: 'absolute',
+                  left: Platform.OS === 'ios' ? -25 : -18,
+                  bottom: 0,
+                  width: 85,
+                  color: color.bg_color,
+                }}>
+                Bookkeeping
+              </Text>
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity onPress={() => {}}>
-            <Image
-              source={BookActive}
-              style={{width: 30, height: 30, alignSelf: 'center'}}
-            />
-            <Text style={{color: color.bg_color}}>Bookkeeping</Text>
-          </TouchableOpacity>
         </View>
+        {/* Bottom Tab Navigator End*/}
       </View>
-      {/* Bottom Tab Navigator End*/}
     </SafeAreaView>
   );
 };

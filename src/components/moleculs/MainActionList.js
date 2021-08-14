@@ -2,7 +2,17 @@ import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {Right} from '../../assets';
 import {color, dimens, fonts} from '../../utils';
-
+/**
+ * Item used in MainAction
+ * @param  {imageRef} icon        Item icon
+ * @param  {function} onPress     when list this item is pressed
+ * @param  {string} title         title of list
+ * @param  {string} description   List description
+ * @param  {object} iconStyle     style object for icon
+ * @param  {boolean} uploadCheck  is there upload check?
+ * @param  {imageRef} image       item image
+ * @param  {object} imageStyle    style object for image
+ */
 const MainActionList = ({
   icon,
   onPress,

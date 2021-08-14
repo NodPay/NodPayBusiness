@@ -23,15 +23,17 @@ import {
 } from '../components';
 import {SplashWaveGradient2} from '../assets';
 import {clearAll, color, dimens, fonts, storeData, wait} from '../utils';
+import useStateContext from '../store/useStateContext';
+import {setFormLoginPhoneBusiness} from '../store/action';
 
 const LoginPhoneBusiness = ({navigation}) => {
+  const {state, dispatch} = useStateContext();
   const PHONE_NUMBER = '000000000000';
   const PASSWORD = 'admin';
+  const PHONE_NUMBER_EMPLOYEE = '000000000000';
+  const PASSWORD_EMPLOYEE = 'employee';
 
   const [isLoading, setIsLoading] = useState(false);
-  const [code, setCode] = useState('1');
-  const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
   const [submited, setSubmited] = useState(false);
   const [isKeyboardShow, setIsKeyboardShow] = useState(false);
   let keyboardDidShowListener;
@@ -69,7 +71,10 @@ const LoginPhoneBusiness = ({navigation}) => {
   const onLogin = () => {
     setIsLoading(true);
     // check auth
-    if (phone == '' || password == '') {
+    if (
+      state.formLoginPhoneBusiness.phone == '' ||
+      state.formLoginPhoneBusiness.password == ''
+    ) {
       wait(100).then(() => {
         setIsLoading(false);
         setError({
@@ -77,7 +82,12 @@ const LoginPhoneBusiness = ({navigation}) => {
           message: "Phone Number or Password Can't be empty.",
         });
       });
-    } else if (phone != PHONE_NUMBER && password != PASSWORD) {
+    } else if (
+      state.formLoginPhoneBusiness.phone != PHONE_NUMBER &&
+      state.formLoginPhoneBusiness.password != PASSWORD &&
+      state.formLoginPhoneBusiness.phone != PHONE_NUMBER_EMPLOYEE &&
+      state.formLoginPhoneBusiness.password != PASSWORD_EMPLOYEE
+    ) {
       wait(100).then(() => {
         setIsLoading(false);
         setError({
@@ -88,13 +98,15 @@ const LoginPhoneBusiness = ({navigation}) => {
     } else {
       wait(300).then(() => {
         storeData('session', {
+          role:
+            state.formLoginPhoneBusiness.password == PASSWORD
+              ? 'admin'
+              : 'employee',
           isLogin: true, // if auth success, then save token for current user then user doesn't need to relogin
           isBoarding: true,
         });
         setError({status: false, message: ''});
-        navigation.reset({
-          routes: [{name: 'AppBusinessDrawer'}],
-        });
+        navigation.replace('AppBusinessDrawer');
       });
     }
   };
@@ -119,17 +131,23 @@ const LoginPhoneBusiness = ({navigation}) => {
                 labelStyle={{color: 'white'}}
                 label="Mobile Number"
                 placeholder="Mobile Number"
-                phoneCode={code}
-                value={phone}
-                onChangeText={setPhone}
-                onChangeCode={setCode}
+                phoneCode={state.formLoginPhoneBusiness.code}
+                value={state.formLoginPhoneBusiness.phone}
+                onChangeText={text =>
+                  dispatch(setFormLoginPhoneBusiness('phone', text))
+                }
+                onChangeCode={text =>
+                  dispatch(setFormLoginPhoneBusiness('code', text))
+                }
               />
               <InputPassword
                 labelStyle={{color: 'white'}}
                 label="Password"
                 placeholder="Password"
-                value={password}
-                onChangeText={setPassword}
+                value={state.formLoginPhoneBusiness.password}
+                onChangeText={text =>
+                  dispatch(setFormLoginPhoneBusiness('password', text))
+                }
               />
             </View>
             <LinkAction
@@ -172,7 +190,7 @@ const LoginPhoneBusiness = ({navigation}) => {
                 marginTop: dimens.default_12,
               }}
               titleStyle={{fontFamily: fonts.sofia_bold}}
-              onPress={() => navigation.navigate('RegisterBusiness')}
+              onPress={() => navigation.navigate('Register')}
             />
           )}
         </View>

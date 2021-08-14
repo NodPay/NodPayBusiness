@@ -4,7 +4,14 @@ import {Search} from '../../assets';
 
 // where local files imported
 import {color, dimens, fonts} from '../../utils';
-
+/**
+ * Text input for searching
+ * @param  {string} value               input value
+ * @param  {function} onChangeText      when value is changed
+ * @param  {string} placeholder         input placeholder
+ * @param  {function} onSubmitEditing   when user submitted editing
+ * @param  {string} backgroundColor     search background color
+ */
 const InputSearch = ({
   value,
   onChangeText,

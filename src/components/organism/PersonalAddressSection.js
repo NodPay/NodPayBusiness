@@ -1,20 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
 
 // where local files imported
+import {setFormEditProfile} from '../../store/action';
+import useStateContext from '../../store/useStateContext';
 import {dimens} from '../../utils';
 import {Gap} from '../atoms';
-import {InputText, InputOption} from '../moleculs';
+import {InputText} from '../moleculs';
 
 const PersonalAddressSection = ({}) => {
-  // handle input form
-  const [user, setUser] = useState({
-    zipCode: '',
-    country: '',
-    state: '',
-    city: '',
-    address: '',
-  });
+  const {state, dispatch} = useStateContext();
 
   return (
     <ScrollView
@@ -24,28 +19,28 @@ const PersonalAddressSection = ({}) => {
       <Gap t={dimens.default_16} />
       <InputText
         label="Zip Code"
-        value={user.zipCode}
-        onChangeText={value => setUser({...user, zipCode: value})}
+        value={state.formEditProfile.zipCode}
+        onChangeText={value => dispatch(setFormEditProfile('zipCode', value))}
       />
       <InputText
         label="Country"
-        value={user.country}
-        onChangeText={value => setUser({...user, country: value})}
+        value={state.formEditProfile.country}
+        onChangeText={value => dispatch(setFormEditProfile('country', value))}
       />
       <InputText
         label="State"
-        value={user.state}
-        onChangeText={value => setUser({...user, state: value})}
+        value={state.formEditProfile.state}
+        onChangeText={value => dispatch(setFormEditProfile('state', value))}
       />
       <InputText
         label="City"
-        value={user.city}
-        onChangeText={value => setUser({...user, city: value})}
+        value={state.formEditProfile.city}
+        onChangeText={value => dispatch(setFormEditProfile('city', value))}
       />
       <InputText
         label="Detail Address"
-        value={user.address}
-        onChangeText={value => setUser({...user, address: value})}
+        value={state.formEditProfile.address}
+        onChangeText={value => dispatch(setFormEditProfile('address', value))}
       />
       <Gap b={dimens.default_16} />
     </ScrollView>

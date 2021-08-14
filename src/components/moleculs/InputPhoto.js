@@ -10,7 +10,10 @@ import {Camera, CloseRed, DefaultPict, Gallery} from '../../assets';
 import {Gap} from '../../components';
 import useStateContext from '../../store/useStateContext';
 import {setFormRegister, setFormEditProfileBusiness} from '../../store/action';
-
+/**
+ * Select image component
+ * @param  {string} type  Type of screen
+ */
 const InputPhoto = ({type}) => {
   const [picture, setPicture] = useState('');
   const btnRef = useRef(null);

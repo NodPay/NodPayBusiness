@@ -4,7 +4,14 @@ import OTPInputView from '@twotalltotems/react-native-otp-input';
 
 // where local files imported
 import {color, dimens, fonts} from '../../utils';
-
+/**
+ * Input pin number with certain digits
+ * @param  {boolean} error          is there any error
+ * @param  {boolean} showPassword   is showing password
+ * @param  {function} onFilled      when all field is filled
+ * @param  {string} value           field value
+ * @param  {function} onChange      when value is changed
+ */
 const InputPIN = ({error, showPassword, onFilled, value, onChange}) => {
   return (
     <View style={{height: 56}}>

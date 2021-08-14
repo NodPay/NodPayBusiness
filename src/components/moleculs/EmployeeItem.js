@@ -5,7 +5,15 @@ import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {DefaultPict, Next, NextBlack, ThreeDots} from '../../assets';
 import {color, dimens, fonts} from '../../utils';
 import {Gap} from '../atoms';
-
+/**
+ * Item of employee list
+ * @param  {boolean} isOnline     is employee online?
+ * @param  {boolean} isPending    pending status
+ * @param  {string} name          employee name
+ * @param  {string} job           employee job
+ * @param  {string} added         Added status
+ * @param  {func} onDetail        When detail is pressed
+ */
 const EmployeeItem = ({isOnline, isPending, name, job, added, onDetail}) => {
   if (isPending) {
     return (

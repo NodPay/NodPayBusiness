@@ -22,8 +22,14 @@ const CommentSend = () => {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS == 'ios' && 'position'}
-      style={styles.container}>
+      behavior={Platform.OS === 'android' ? '' : 'padding'}
+      keyboardVerticalOffset={Platform.OS === 'android' ? 0 : 40}
+      style={[
+        styles.container,
+        Platform.OS === 'android'
+          ? {paddingVertical: dimens.default_12}
+          : {flex: 1},
+      ]}>
       <TextInput
         placeholder="Write your comment"
         placeholderTextColor={color.grey_5}
@@ -45,10 +51,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: dimens.default,
-    paddingVertical: dimens.default_12,
   },
   input: {
     flex: 1,
+    width: '100%',
     backgroundColor: color.bg_input_comment,
     color: color.grey_5,
     marginTop: 0,

@@ -6,7 +6,10 @@ import OTPInputView from '@twotalltotems/react-native-otp-input';
 import {color, dimens, fonts} from '../../utils';
 import useStateContext from '../../store/useStateContext';
 import {setFormRegister} from '../../store/action';
-
+/**
+ * Input OTP number
+ * @param  {boolean} error is there any error?
+ */
 const InputOtp = ({error}) => {
   const {state, dispatch} = useStateContext();
 

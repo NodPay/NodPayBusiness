@@ -3,7 +3,12 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 
 //where local file imported
 import {color, dimens, fonts} from '../../utils';
-
+/**
+ * Component to show where there is no data
+ * @param  {imageRef} icon    Empty icon image
+ * @param  {number} iconSize  Empty icon size
+ * @param  {string} content   Empty description
+ */
 const EmptyState = ({icon, iconSize = 101, content}) => {
   return (
     <View style={styles.container}>

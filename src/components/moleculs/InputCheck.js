@@ -4,7 +4,13 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 // where local files imported
 import {color, dimens, fonts} from '../../utils';
 import {CheckmarkWhite} from '../../assets';
-
+/**
+ * Input type check
+ * @param  {string} label       input label
+ * @param  {object} labelStyle  custom label style
+ * @param  {string} value       input value
+ * @param  {function} onChange  When input value is changed
+ */
 const InputCheck = ({label, labelStyle, value, onChange}) => {
   return (
     <TouchableOpacity

@@ -133,7 +133,7 @@ const PageTitle = ({
       {isOtherProfile && (
         <TouchableOpacity onPress={onEdit} style={styles.containerQR}>
           <Image
-            source={isBlackArrow ? ThreeDotsBlack : ThreeDotsBlack}
+            source={ThreeDotsVertical}
             style={{height: 24, width: 24, resizeMode: 'contain'}}
           />
         </TouchableOpacity>

@@ -3,7 +3,14 @@ import {StyleSheet, TouchableOpacity, Image, View} from 'react-native';
 import {FormLabel, TextInput} from '../atoms';
 import {PasswordHide} from '../../assets';
 import {dimens} from '../../utils';
-
+/**
+ * Input type password
+ * @param  {string} label           input label
+ * @param  {string} value           value of input
+ * @param  {string} placeholder     input placeholder
+ * @param  {function} onChangeText  when value is changed
+ * @param  {object} labelStyle      object style for label
+ */
 const InputPassword = ({
   label,
   value,

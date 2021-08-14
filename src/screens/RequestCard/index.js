@@ -27,16 +27,27 @@ import {CardActive, Exchange, HomeInactive, Next} from '../../assets';
 const RequestCard = ({navigation, route}) => {
   const [stepData, setStepData] = useState({
     isComplete: false,
+    currentActive: 0,
   });
   const [isLoading, setIsLoading] = useState(false);
 
-  const onPressBack = () => {};
+  const onPressBack = () => {
+    if (stepData.currentActive == 0) {
+      navigation.goBack();
+    } else {
+      setStepData(prev => ({...prev, currentActive: prev.currentActive - 1}));
+    }
+  };
 
   const onPressContinue = () => {
-    setIsLoading(true);
-    wait(400).then(() => {
-      navigation.navigate('RequestCardSuccess');
-    });
+    if (stepData.currentActive == 2) {
+      setIsLoading(true);
+      wait(400).then(() => {
+        navigation.navigate('RequestCardSuccess');
+      });
+    } else {
+      setStepData(prev => ({...prev, currentActive: prev.currentActive + 1}));
+    }
   };
 
   // After the last step, set to loading
@@ -99,7 +110,10 @@ const RequestCard = ({navigation, route}) => {
 
       {/* Steppers */}
       <View style={styles.container}>
-        <StepFormRequestCard activeStep={2} isComplete={stepData.isComplete} />
+        <StepFormRequestCard
+          activeStep={stepData.currentActive}
+          isComplete={stepData.isComplete}
+        />
       </View>
 
       {/* Bottom Button */}

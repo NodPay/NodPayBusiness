@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-// import {LoginManager, AccessToken} from 'react-native-fbsdk-next';
-// import auth from '@react-native-firebase/auth';
+import {LoginManager, AccessToken} from 'react-native-fbsdk-next';
+import auth from '@react-native-firebase/auth';
 
 // where local file imported
 import {Button, PageTitle, SectionTitle, LinkAction} from '../components';
@@ -17,35 +17,35 @@ import {Facebook, Email, Phone, SplashWaveGradient, Change} from '../assets';
 import {clearAll, color, dimens, fonts, storeData} from '../utils';
 
 const Login = ({navigation}) => {
-  // const loginWithFacebook = async () => {
-  //   try {
-  //     const {isCancelled} = await LoginManager.logInWithPermissions([
-  //       'public_profile',
-  //       'email',
-  //     ]);
+  const loginWithFacebook = async () => {
+    try {
+      const {isCancelled} = await LoginManager.logInWithPermissions([
+        'public_profile',
+        'email',
+      ]);
 
-  //     if (isCancelled) {
-  //       throw new Error('User cancelled the login process.');
-  //     }
+      if (isCancelled) {
+        throw new Error('User cancelled the login process.');
+      }
 
-  //     const data = await AccessToken.getCurrentAccessToken();
+      const data = await AccessToken.getCurrentAccessToken();
 
-  //     if (!data) {
-  //       throw new Error('Something went wrong when obtaining access token.');
-  //     }
+      if (!data) {
+        throw new Error('Something went wrong when obtaining access token.');
+      }
 
-  //     const credential = auth.FacebookAuthProvider.credential(data.accessToken);
-  //     const result = await auth().signInWithCredential(credential);
+      const credential = auth.FacebookAuthProvider.credential(data.accessToken);
+      const result = await auth().signInWithCredential(credential);
 
-  //     const profile = result.user.providerData.find(
-  //       item => item.providerId === 'facebook.com',
-  //     );
+      const profile = result.user.providerData.find(
+        item => item.providerId === 'facebook.com',
+      );
 
-  //     console.warn('profile', profile);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+      console.warn('profile', profile);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     storeData('session', {
@@ -82,7 +82,7 @@ const Login = ({navigation}) => {
               borderWidth: 1,
             }}
             titleStyle={{fontFamily: fonts.sofia_bold, color: 'black'}}
-            // onPress={loginWithFacebook}
+            onPress={loginWithFacebook}
           />
           <Button
             iconLeft={Phone}
@@ -108,23 +108,6 @@ const Login = ({navigation}) => {
             titleStyle={{fontFamily: fonts.sofia_bold, color: 'black'}}
             onPress={() => navigation.navigate('LoginEmail')}
           />
-          <TouchableOpacity
-            onPress={() => navigation.navigate('LoginBusiness')}
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            <Image source={Change} style={{height: 24, width: 24}} />
-            <Text
-              style={{
-                marginLeft: 8,
-                fontFamily: fonts.sofia_bold,
-                fontSize: dimens.default,
-              }}>
-              Sign in as Business Account
-            </Text>
-          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.footer_container}>
