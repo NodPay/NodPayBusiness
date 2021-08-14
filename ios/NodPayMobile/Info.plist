@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Allow permission</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb139787628219124</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>139787628219124</string>
+	<key>FacebookDisplayName</key>
+	<string>NodPay</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>CFBundleDisplayName</key>
+	<string>NodPayMobile</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow permission</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow permission</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSans-Bold.ttf</string>
+		<string>NotoSans-BoldItalic.ttf</string>
+		<string>NotoSans-Italic.ttf</string>
+		<string>NotoSans-Regular.ttf</string>
+		<string>SofiaPro-Bold.otf</string>
+		<string>SofiaPro-Italic.otf</string>
+		<string>SofiaPro-Medium.otf</string>
+		<string>SofiaPro-Regular.otf</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>
