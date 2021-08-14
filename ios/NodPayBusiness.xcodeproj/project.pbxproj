@@ -564,7 +564,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nodpay.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nodpay.business;
 				PRODUCT_NAME = NodPayBusiness;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NodPayBusiness-Bridging-Header.h";
@@ -594,7 +594,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nodpay.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nodpay.business;
 				PRODUCT_NAME = NodPayBusiness;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NodPayBusiness-Bridging-Header.h";
