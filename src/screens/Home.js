@@ -117,7 +117,8 @@ const Home = ({navigation}) => {
               navigation.navigate('Search', {type: 'personal'})
             }
             onPressProfile={() => {
-              navigation.navigate('Profile');
+              navigation.openDrawer();
+              // navigation.navigate('Profile');
             }}
           />
         </View>
